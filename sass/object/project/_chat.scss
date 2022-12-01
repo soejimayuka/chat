@@ -1,0 +1,77 @@
+@charset 'UTF-8';
+@use "sass:math"; //計算関数
+@use "../../global" as *;
+
+/*
+  チャット
+*/
+.l-section {
+  width: 1400px;
+  margin: 0 auto;
+  margin-top: pxToRem(100px);
+  @include mq(lg) {
+    width: 90%;
+  }
+}
+.l-chatWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: pxToRem(12px);
+}
+.l-chatImg {
+  width: 72px;
+}
+.l-chatTxt {
+  padding-left: pxToRem(18px);
+}
+.l-chatInput__name {
+  margin-top: pxToRem(24px);
+  margin-bottom: pxToRem(24px);
+}
+.l-chatInput__txt {
+  display: flex;
+}
+.l-output {
+  margin-top: pxToRem(60px);
+  margin-bottom: pxToRem(60px);
+}
+.p-chatInput {
+  background-color: #f8f8f8;
+  border: none;
+  border-radius: 50px;
+  color: #d0c2c2;
+  height: 50px;
+  padding-left: pxToRem(40px);
+}
+.p-chatInput.-name {
+  width: 184px;
+}
+.p-chatInput.-txt {
+  width: 600px;
+}
+
+.p-chatTime {
+  color: #a3a3a3;
+  $font-size: 10px;
+  font-size: pxToRem($font-size);
+  margin-bottom: pxToRem(8px);
+}
+.btn-chat {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #efeded;
+  text-transform: uppercase;
+  $font-size: 12px;
+  font-size: pxToRem($font-size);
+}
+.btn-chat:focus,
+.btn-chat:hover {
+  background-color: #000;
+  color: #fff;
+}
+.btn-send {
+  background-color: transparent;
+  border: none;
+}

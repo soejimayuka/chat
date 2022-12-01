@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/common.css" />
+    <script src="js/app.js" defer=""></script>
+    <title>FAMILY SCHEDULE 2</title>
+  </head>
+
+  <body>
+    <!-- 新規登録ボタン -->
+    <section>
+      <div class="l-shinkbtn">
+        <button type="button" id="openModal" class="c-button -touroku">新規登録</button>
+        <button type="button" id="clear" class="c-button -sakuzyo">全ての予定を削除</button>
+      </div>
+    </section>
+    <!-- モーダルエリアここから -->
+    <section id="modalArea" class="modalArea">
+      <div id="modalBg" class="modalBg"></div>
+      <div class="modalWrapper">
+        <div class="modalContents">
+          <div class="l-input__wrapper">
+            <div class="l-input__area">
+              <div class="selectdiv">
+                <p class="p-input__title">FAMILY</p>
+                <select class="l-input__box" name="example" 　id="scheduleWho">
+                  <option>名前を選択</option>
+                  <option value="papa">PAPA</option>
+                  <option value="mama">MAMA</option>
+                  <option value="nanami">NANAMI</option>
+                  <option value="shiho">SHIHO</option>
+                  <option value="kaho">KAHO</option>
+                  <option value="yuno">YUNO</option>
+                  <option value="ayu">AYU</option>
+                </select>
+              </div>
+              <p class="p-input__title">DATE</p>
+              <input class="l-input__box" type="date" name="date" id="scheduleBi" />
+              <p class="p-input__title">TIME</p>
+              <input
+                class="l-input__box"
+                type="time"
+                name="example1"
+                id="scheduleTime"
+                list="data-list"
+                　step="1800"
+              /><span></span>
+              <datalist id="data-list">
+                <option value="05:00"></option>
+                <option value="05:30"></option>
+                <option value="06:00"></option>
+                <option value="06:30"></option>
+                <option value="07:00"></option>
+                <option value="07:30"></option>
+                <option value="08:00"></option>
+                <option value="08:30"></option>
+                <option value="09:00"></option>
+                <option value="09:30"></option>
+                <option value="10:00"></option>
+                <option value="10:30"></option>
+                <option value="11:00"></option>
+                <option value="11:30"></option>
+                <option value="12:00"></option>
+                <option value="12:30"></option>
+                <option value="13:00"></option>
+                <option value="13:30"></option>
+                <option value="14:00"></option>
+                <option value="14:30"></option>
+                <option value="15:00"></option>
+                <option value="15:30"></option>
+                <option value="16:00"></option>
+                <option value="16:30"></option>
+                <option value="17:00"></option>
+                <option value="17:30"></option>
+                <option value="18:00"></option>
+                <option value="18:30"></option>
+                <option value="19:00"></option>
+                <option value="19:30"></option>
+                <option value="20:00"></option>
+                <option value="20:30"></option>
+                <option value="21:00"></option>
+                <option value="22:30"></option>
+                <option value="23:00"></option>
+                <option value="23:30"></option>
+              </datalist>
+              <p class="p-input__title">SCHEDULE</p>
+              <input class="l-input__box" type="text" id="scheduleTitle" />
+            </div>
+            <div>
+              <button type="button" id="save" class="c-button -hozon">保存</button>
+            </div>
+          </div>
+        </div>
+        <div id="closeModal" class="closeModal">閉じる</div>
+      </div>
+    </section>
+    <section>
+      <div class="l-scroll">
+        <!-- 1段目 /> -->
+        <div class="l-wrapper -title">
+          <div class="l-box -who"></div>
+          <div class="l-box -who"><p>papa</p></div>
+          <div class="l-box -who"><p>mama</p></div>
+          <div class="l-box -who"><p>nanami</p></div>
+          <div class="l-box -who"><p>shiho</p></div>
+          <div class="l-box -who"><p>kaho</p></div>
+          <div class="l-box -who"><p>yuno</p></div>
+          <div class="l-box -who"><p>ayu</p></div>
+        </div>
+        <!-- 3段目 /> -->
+        <div class="l-wrapper -schedule">
+          <div id="firstday" class="l-box -bi"></div>
+          <div class="l-box"><div id="papa-hyouzi-firstday"></div></div>
+          <div class="l-box"><div id="mama-hyouzi-firstday"></div></div>
+          <div class="l-box"><div id="nanami-hyouzi-firstday"></div></div>
+          <div class="l-box"><div id="shiho-hyouzi-firstday"></div></div>
+          <div class="l-box"><div id="kaho-hyouzi-firstday"></div></div>
+          <div class="l-box"><div id="yuno-hyouzi-firstday"></div></div>
+          <div class="l-box"><div id="ayu-hyouzi-firstday"></div></div>
+        </div>
+        <!-- 4段目 /> -->
+        <div class="l-wrapper -schedule">
+          <div id="secondday" class="l-box -bi"></div>
+          <div class="l-box"><div id="papa-hyouzi-secondday"></div></div>
+          <div class="l-box"><div id="mama-hyouzi-secondday"></div></div>
+          <div class="l-box"><div id="nanami-hyouzi-secondday"></div></div>
+          <div class="l-box"><div id="shiho-hyouzi-secondday"></div></div>
+          <div class="l-box"><div id="kaho-hyouzi-secondday"></div></div>
+          <div class="l-box"><div id="yuno-hyouzi-secondday"></div></div>
+          <div class="l-box"><div id="ayu-hyouzi-secondday"></div></div>
+        </div>
+        <!-- 5段目 /> -->
+        <div class="l-wrapper -schedule">
+          <div id="thirdday" class="l-box -bi"></div>
+          <div class="l-box"><div id="papa-hyouzi-thirdday"></div></div>
+          <div class="l-box"><div id="mama-hyouzi-thirdday"></div></div>
+          <div class="l-box"><div id="nanami-hyouzi-thirdday"></div></div>
+          <div class="l-box"><div id="shiho-hyouzi-thirdday"></div></div>
+          <div class="l-box"><div id="kaho-hyouzi-thirdday"></div></div>
+          <div class="l-box"><div id="yuno-hyouzi-thirdday"></div></div>
+          <div class="l-box"><div id="ayu-hyouzi-thirdday"></div></div>
+        </div>
+        <!-- 6段目 /> -->
+        <div class="l-wrapper -schedule">
+          <div id="fourthdday" class="l-box -bi"></div>
+          <div class="l-box"><div id="papa-hyouzi-fourthdday"></div></div>
+          <div class="l-box"><div id="mama-hyouzi-fourthdday"></div></div>
+          <div class="l-box"><div id="nanami-hyouzi-fourthdday"></div></div>
+          <div class="l-box"><div id="shiho-hyouzi-fourthdday"></div></div>
+          <div class="l-box"><div id="kaho-hyouzi-fourthdday"></div></div>
+          <div class="l-box"><div id="yuno-hyouzi-fourthdday"></div></div>
+          <div class="l-box"><div id="ayu-hyouzi-fourthdday"></div></div>
+        </div>
+        <!-- 7段目 /> -->
+        <div class="l-wrapper -schedule">
+          <div id="fifthdday" class="l-box -bi"></div>
+          <div class="l-box"><div id="papa-hyouzi-fifthdday"></div></div>
+          <div class="l-box"><div id="mama-hyouzi-fifthdday"></div></div>
+          <div class="l-box"><div id="nanami-hyouzi-fifthdday"></div></div>
+          <div class="l-box"><div id="shiho-hyouzi-fifthdday"></div></div>
+          <div class="l-box"><div id="kaho-hyouzi-fifthdday"></div></div>
+          <div class="l-box"><div id="yuno-hyouzi-fifthdday"></div></div>
+          <div class="l-box"><div id="ayu-hyouzi-fifthdday"></div></div>
+        </div>
+        <!-- 8段目 /> -->
+        <div class="l-wrapper -schedule">
+          <div id="sixthdday" class="l-box -bi"></div>
+          <div class="l-box"><div id="papa-hyouzi-sixthdday"></div></div>
+          <div class="l-box"><div id="mama-hyouzi-sixthdday"></div></div>
+          <div class="l-box"><div id="nanami-hyouzi-sixthdday"></div></div>
+          <div class="l-box"><div id="shiho-hyouzi-sixthdday"></div></div>
+          <div class="l-box"><div id="kaho-hyouzi-sixthdday"></div></div>
+          <div class="l-box"><div id="yuno-hyouzi-sixthdday"></div></div>
+          <div class="l-box"><div id="ayu-hyouzi-sixthdday"></div></div>
+        </div>
+        <!-- 9段目 /> -->
+        <div class="l-wrapper -schedule">
+          <div id="seventhdday" class="l-box -bi"></div>
+          <div class="l-box"><div id="papa-hyouzi-seventhdday"></div></div>
+          <div class="l-box"><div id="mama-hyouzi-seventhdday"></div></div>
+          <div class="l-box"><div id="nanami-hyouzi-seventhdday"></div></div>
+          <div class="l-box"><div id="shiho-hyouzi-seventhdday"></div></div>
+          <div class="l-box"><div id="kaho-hyouzi-seventhdday"></div></div>
+          <div class="l-box"><div id="yuno-hyouzi-seventhdday"></div></div>
+          <div class="l-box"><div id="ayu-hyouzi-seventhdday"></div></div>
+        </div>
+      </div>
+    </section>
+    <!-- チャット機能 -->
+    <section class="l-section">
+      <form>
+        <fieldset>
+          <button type="button" value="papa" id="button-papa" name="btn" class="btn-chat">papa</button>
+          <button type="button" value="papa" id="button-mama" name="btn" class="btn-chat">mama</button>
+          <button type="button" value="papa" id="button-nanami" name="btn" class="btn-chat">nanami</button>
+          <button type="button" value="papa" id="button-shiho" name="btn" class="btn-chat">shiho</button>
+          <button type="button" value="papa" id="button-kaho" name="btn" class="btn-chat">kaho</button>
+          <button type="button" value="papa" id="button-yuno" name="btn" class="btn-chat">yuno</button>
+          <button type="button" value="papa" id="button-ayu" name="btn" class="btn-chat">ayu</button>
+          <div class="l-chatInput__name">私は <input type="text" id="name" class="p-chatInput -name" /></div>
+          <div class="l-chatInput__txt">
+            <input type="text" id="text" class="p-chatInput -txt" />
+            <button type="button" id="send" class="btn-send"><img src="img/send.png" alt="" /></button>　
+          </div>
+        </fieldset>
+      </form>
+      <div class="l-output">
+        <ul id="output"></ul>
+      </div>
+      <form name="formUpdate">
+        <input type="hidden" name="docid" value="' + doc.id + '" />
+      </form>
+    </section>
+    <!-- データ出力場所 -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      // 日時をいい感じの形式にする関数
+      function convertTimestampToDatetime(timestamp) {
+        const _d = timestamp ? new Date(timestamp * 1000) : new Date();
+        const Y = _d.getFullYear();
+        const m = (_d.getMonth() + 1).toString().padStart(2, "0");
+        const d = _d.getDate().toString().padStart(2, "0");
+        const H = _d.getHours().toString().padStart(2, "0");
+        const i = _d.getMinutes().toString().padStart(2, "0");
+        const s = _d.getSeconds().toString().padStart(2, "0");
+        return `${m}/${d} ${H}:${i}`;
+      }
+    </script>
+    <!-- 以下にfirebaseのコードを貼り付けよう -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        serverTimestamp,
+        onSnapshot,
+        query,
+        orderBy,
+        deleteDoc,
+        doc,
+      } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "",
+        authDomain: "chat-product-b0292.firebaseapp.com",
+        projectId: "chat-product-b0292",
+        storageBucket: "chat-product-b0292.appspot.com",
+        messagingSenderId: "523781522222",
+        appId: "1:523781522222:web:8f915da4fa471bc3e7f0bf",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      // データベースと接続
+      var db = getFirestore(app);
+
+      // 保存
+      // 家族の名前を選択してtext欄に入力
+      const btn_papa = document.getElementById("button-papa");
+      btn_papa.addEventListener("click", (e) => {
+        clickHandler1(e);
+      });
+      const clickHandler1 = (e) => {
+        const name = document.getElementById("name");
+        name.value = "papa";
+      };
+
+      const btn_mama = document.getElementById("button-mama");
+      btn_mama.addEventListener("click", (e) => {
+        clickHandler2(e);
+      });
+      const clickHandler2 = (e) => {
+        const name = document.getElementById("name");
+        name.value = "mama";
+      };
+
+      const btn_nanami = document.getElementById("button-nanami");
+      btn_nanami.addEventListener("click", (e) => {
+        clickHandler3(e);
+      });
+      const clickHandler3 = (e) => {
+        const name = document.getElementById("name");
+        name.value = "nanami";
+      };
+
+      const btn_shiho = document.getElementById("button-shiho");
+      btn_shiho.addEventListener("click", (e) => {
+        clickHandler4(e);
+      });
+      const clickHandler4 = (e) => {
+        const name = document.getElementById("name");
+        name.value = "shiho";
+      };
+
+      const btn_kaho = document.getElementById("button-kaho");
+      btn_kaho.addEventListener("click", (e) => {
+        clickHandler5(e);
+      });
+      const clickHandler5 = (e) => {
+        const name = document.getElementById("name");
+        name.value = "kaho";
+      };
+
+      const btn_yuno = document.getElementById("button-yuno");
+      btn_yuno.addEventListener("click", (e) => {
+        clickHandler6(e);
+      });
+      const clickHandler6 = (e) => {
+        const name = document.getElementById("name");
+        name.value = "yuno";
+      };
+
+      const btn_ayu = document.getElementById("button-ayu");
+      btn_ayu.addEventListener("click", (e) => {
+        clickHandler7(e);
+      });
+      const clickHandler7 = (e) => {
+        const name = document.getElementById("name");
+        name.value = "ayu";
+      };
+
+      // sendボタンを押して情報を送付
+      $("#send").on("click", function () {
+        // 送信時に必要な処理
+
+        const postData = {
+          name: $("#name").val(),
+          text: $("#text").val(),
+          time: serverTimestamp(),
+        };
+        addDoc(collection(db, "chat"), postData);
+        $("#text").val("");
+      });
+
+      //  データ取得条件の指定（今回は時間の新しい順に並び替えて取得）
+      const q = query(collection(db, "chat"), orderBy("time", "desc"));
+      // データ取得処理
+      onSnapshot(q, (querySnapshot) => {
+        //データの変更があった時にここの処理が動く
+        // console.log(querySnapshot.docs);
+
+        // これは毎回同じ
+        const documents = [];
+        querySnapshot.docs.forEach(function (doc) {
+          const document = {
+            id: doc.id,
+            data: doc.data(),
+          };
+          documents.push(document);
+        });
+
+        // ただのオブジェクトが入った配列
+        console.log(documents);
+
+        const htmlElements = [];
+
+        documents.forEach(function (document) {
+          if (document.data.name === "papa") {
+            htmlElements.push(`
+                        <div class=l-chatWrapper>
+                          <div class=l-chatImg> <img src="img/papa.png"></div>
+                          <div id="${document.id}" class="l-chatTxt">
+                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                            <p>${document.data.text}</p>
+                          </div>
+                        </div>
+                      `);
+          } else if (document.data.name === "mama") {
+            htmlElements.push(`
+                        <div class=l-chatWrapper>
+                          <div class=l-chatImg> <img src="img/mama.png"></div>
+                          <div id="${document.id}" class="l-chatTxt">
+                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                            <p>${document.data.text}</p>
+                          </div>
+                        </div>
+                      `);
+          } else if (document.data.name === "nanami") {
+            htmlElements.push(`
+                        <div class=l-chatWrapper>
+                          <div class=l-chatImg> <img src="img/nanami.png"></div>
+                          <div id="${document.id}" class="l-chatTxt">
+                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                            <p>${document.data.text}</p>
+                          </div>
+                        </div>
+                      `);
+          } else if (document.data.name === "shiho") {
+            htmlElements.push(`
+                        <div class=l-chatWrapper>
+                          <div class=l-chatImg> <img src="img/shiho.png"></div>
+                          <div id="${document.id}" class="l-chatTxt">
+                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                            <p>${document.data.text}</p>
+                          </div>
+                        </div>
+                      `);
+          } else if (document.data.name === "kaho") {
+            htmlElements.push(`
+                        <div class=l-chatWrapper>
+                          <div class=l-chatImg> <img src="img/kaho.png"></div>
+                          <div id="${document.id}" class="l-chatTxt">
+                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                            <p>${document.data.text}</p>
+                          </div>
+                        </div>
+                      `);
+          } else if (document.data.name === "yuno") {
+            htmlElements.push(`
+                        <div class=l-chatWrapper>
+                          <div class=l-chatImg> <img src="img/yuno.png"></div>
+                          <div id="${document.id}" class="l-chatTxt">
+                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                            <p>${document.data.text}</p>
+                          </div>
+                        </div>
+                      `);
+          } else if (document.data.name === "ayu") {
+            htmlElements.push(`
+                        <div class=l-chatWrapper>
+                          <div class=l-chatImg> <img src="img/ayu.png"></div>
+                          <div id="${document.id}" class="l-chatTxt">
+                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                            <p>${document.data.text}</p>
+                          </div>
+                        </div>
+                      `);
+          }
+        });
+        $("#output").html(htmlElements);
+      });
+
+      // saveボタンを押して情報を送付
+      $("#save").on("click", function () {
+        // 送信時に必要な処理
+        let date = document.querySelector(`input[type='date'][name='date']`);
+        let time = document.querySelector('input[type="time"]');
+        const memoData = {
+          who: $("[name=example]").val(),
+          bi: date.value,
+          title: $("#scheduleTitle").val(),
+          zikan: time.value,
+        };
+        addDoc(collection(db, "memo"), memoData);
+        modalArea.classList.toggle("is-show");
+      });
+
+      // データ取得処理
+
+      onSnapshot(collection(db, "memo"), (querySnapshot) => {
+        // これは毎回同じ
+        const memo_documents = [];
+        querySnapshot.docs.forEach(function (doc) {
+          const memo_document = {
+            id: doc.id,
+            memoData: doc.data(),
+          };
+          memo_documents.push(memo_document);
+        });
+
+        // ただのオブジェクトが入った配列
+        console.log(memo_documents);
+        // 日時をいい感じの形式にする関数2
+        function convertTimestampToDatetime2(timestamp) {
+          const Y = timestamp.getFullYear();
+          const m = (timestamp.getMonth() + 1).toString().padStart(2, "0");
+          const d = timestamp.getDate().toString().padStart(2, "0");
+          const H = timestamp.getHours().toString().padStart(2, "0");
+          const i = timestamp.getMinutes().toString().padStart(2, "0");
+          const s = timestamp.getSeconds().toString().padStart(2, "0");
+          return `${Y}-${m}-${d}`;
+        }
+        // 日時をいい感じの形式にする関数3
+        function convertTimestampToDatetime3(timestamp) {
+          const Y = timestamp.getFullYear();
+          const m = (timestamp.getMonth() + 1).toString().padStart(2, "0");
+          const d = timestamp.getDate().toString().padStart(2, "0");
+          const H = timestamp.getHours().toString().padStart(2, "0");
+          const i = timestamp.getMinutes().toString().padStart(2, "0");
+          const s = timestamp.getSeconds().toString().padStart(2, "0");
+          return `${m}/${d}`;
+        }
+        // 基準となる日付
+        let now = new Date();
+        const firstday = convertTimestampToDatetime2(now);
+        const firstday2 = convertTimestampToDatetime3(now);
+        // 翌日
+        const day2 = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+        const secondday = convertTimestampToDatetime2(day2);
+        const secondday2 = convertTimestampToDatetime3(day2);
+        // 明後日
+        const day3 = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 2);
+        const thirdday = convertTimestampToDatetime2(day3);
+        const thirdday2 = convertTimestampToDatetime3(day3);
+        //4日後の日付
+        const day4 = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 3);
+        const fourthdday = convertTimestampToDatetime2(day4);
+        const fourthdday2 = convertTimestampToDatetime3(day4);
+        //5日後の日付
+        const day5 = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 4);
+        const fifthdday = convertTimestampToDatetime2(day5);
+        const fifthdday2 = convertTimestampToDatetime3(day5);
+        //6日後の日付
+        const day6 = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 5);
+        const sixthdday = convertTimestampToDatetime2(day6);
+        const sixthdday2 = convertTimestampToDatetime3(day6);
+        //6日後の日付
+        const day7 = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 6);
+        const seventhdday = convertTimestampToDatetime2(day7);
+        const seventhdday2 = convertTimestampToDatetime3(day7);
+        //1週間の配列
+        var weekseven = [firstday, secondday, thirdday, fourthdday, fifthdday, sixthdday, seventhdday];
+
+        //予定表の日付を表示
+        const z = document.getElementById("firstday");
+        z.innerHTML = firstday2;
+        const zz = document.getElementById("secondday");
+        zz.innerHTML = secondday2;
+        const zzz = document.getElementById("thirdday");
+        zzz.innerHTML = thirdday2;
+        const zzzz = document.getElementById("fourthdday");
+        zzzz.innerHTML = fourthdday2;
+        const zzzzz = document.getElementById("fifthdday");
+        zzzzz.innerHTML = fifthdday2;
+        const zzzzzz = document.getElementById("sixthdday");
+        zzzzzz.innerHTML = sixthdday2;
+        const zzzzzzz = document.getElementById("seventhdday");
+
+        zzzzzzz.innerHTML = seventhdday2;
+
+        memo_documents.forEach(function (memo_document) {
+          let rem = document.querySelector(".yotei");
+          if (rem !== null) {
+            rem.remove();
+          }
+        });
+
+        $("#clear").on("click", function () {
+          memo_documents.forEach(function (memo_document) {
+            console.log(memo_document.id);
+          });
+        });
+
+        memo_documents.forEach(function (memo_document) {
+          //PAPAゾーン
+          if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "papa") {
+            const k = document.getElementById("papa-hyouzi-firstday");
+            const kk = document.createElement("ul");
+            kk.setAttribute("id", "${document.id}");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "papa") {
+            const k = document.getElementById("papa-hyouzi-secondday");
+            const kk = document.createElement("ul");
+            kk.setAttribute("id", memo_document.id);
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "papa") {
+            const k = document.getElementById("papa-hyouzi-thirdday");
+            const kk = document.createElement("ul");
+            kk.setAttribute("id", "${document.id}");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "papa") {
+            const k = document.getElementById("papa-hyouzi-fourthdday");
+            const kk = document.createElement("ul");
+            kk.setAttribute("id", "${document.id}");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "papa") {
+            const k = document.getElementById("papa-hyouzi-fifthdday");
+            const kk = document.createElement("ul");
+            kk.setAttribute("id", "${document.id}");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "papa") {
+            const k = document.getElementById("papa-hyouzi-sixthdday");
+            const kk = document.createElement("ul");
+            kk.setAttribute("id", "${document.id}");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "papa") {
+            const k = document.getElementById("papa-hyouzi-seventhdday");
+            const kk = document.createElement("ul");
+            kk.setAttribute("id", "${document.id}");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          }
+          //MAMAゾーン
+          if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "mama") {
+            const k = document.getElementById("mama-hyouzi-firstday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "mama") {
+            const k = document.getElementById("mama-hyouzi-secondday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "mama") {
+            const k = document.getElementById("mama-hyouzi-thirdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "mama") {
+            const k = document.getElementById("mama-hyouzi-fourthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "mama") {
+            const k = document.getElementById("mama-hyouzi-fifthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "mama") {
+            const k = document.getElementById("mama-hyouzi-sixthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "mama") {
+            const k = document.getElementById("mama-hyouzi-seventhdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          }
+          //NANAMIゾーン
+          if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "nanami") {
+            const k = document.getElementById("nanami-hyouzi-firstday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "nanami") {
+            const k = document.getElementById("nanami-hyouzi-secondday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "nanami") {
+            const k = document.getElementById("nanami-hyouzi-thirdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "nanami") {
+            const k = document.getElementById("nanami-hyouzi-fourthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "nanami") {
+            const k = document.getElementById("nanami-hyouzi-fifthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "nanami") {
+            const k = document.getElementById("nanami-hyouzi-sixthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "nanami") {
+            const k = document.getElementById("nanami-hyouzi-seventhdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          }
+          //SHIHOゾーン
+          if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "shiho") {
+            const k = document.getElementById("shiho-hyouzi-firstday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "shiho") {
+            const k = document.getElementById("shiho-hyouzi-secondday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "shiho") {
+            const k = document.getElementById("shiho-hyouzi-thirdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "shiho") {
+            const k = document.getElementById("shiho-hyouzi-fourthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "shiho") {
+            const k = document.getElementById("shiho-hyouzi-fifthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "shiho") {
+            const k = document.getElementById("shiho-hyouzi-sixthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "shiho") {
+            const k = document.getElementById("shiho-hyouzi-seventhdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          }
+          //KAHOゾーン
+          if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "kaho") {
+            const k = document.getElementById("kaho-hyouzi-firstday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "kaho") {
+            const k = document.getElementById("kaho-hyouzi-secondday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "kaho") {
+            const k = document.getElementById("kaho-hyouzi-thirdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "kaho") {
+            const k = document.getElementById("kaho-hyouzi-fourthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "kaho") {
+            const k = document.getElementById("kaho-hyouzi-fifthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "kaho") {
+            const k = document.getElementById("kaho-hyouzi-sixthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "kaho") {
+            const k = document.getElementById("kaho-hyouzi-seventhdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          }
+          //YUNOゾーン
+          if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "yuno") {
+            const k = document.getElementById("yuno-hyouzi-firstday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "yuno") {
+            const k = document.getElementById("yuno-hyouzi-secondday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "yuno") {
+            const k = document.getElementById("yuno-hyouzi-thirdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "yuno") {
+            const k = document.getElementById("yuno-hyouzi-fourthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "yuno") {
+            const k = document.getElementById("yuno-hyouzi-fifthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "yuno") {
+            const k = document.getElementById("yuno-hyouzi-sixthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "yuno") {
+            const k = document.getElementById("yuno-hyouzi-seventhdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          }
+          //AYUゾーン
+          if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "ayu") {
+            const k = document.getElementById("ayu-hyouzi-firstday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "ayu") {
+            const k = document.getElementById("ayu-hyouzi-secondday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "ayu") {
+            const k = document.getElementById("ayu-hyouzi-thirdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "ayu") {
+            const k = document.getElementById("ayu-hyouzi-fourthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "ayu") {
+            const k = document.getElementById("ayu-hyouzi-fifthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "ayu") {
+            const k = document.getElementById("ayu-hyouzi-sixthdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "ayu") {
+            const k = document.getElementById("ayu-hyouzi-seventhdday");
+            const kk = document.createElement("ul");
+            kk.classList.add("yotei");
+            const pp = document.createElement("p");
+            pp.innerHTML = memo_document.memoData.title;
+            pp.classList.add("yotei-title");
+            const ppp = document.createElement("p");
+            ppp.innerHTML = memo_document.memoData.zikan;
+            ppp.classList.add("yotei-zikan");
+            k.appendChild(kk);
+            kk.appendChild(pp);
+            kk.appendChild(ppp);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
