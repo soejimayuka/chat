@@ -10,18 +10,18 @@
   </head>
 
   <body>
+    <!-- 入力場所を作成しよう -->
     <!-- 新規登録ボタン -->
     <section>
       <div class="l-shinkbtn">
         <button type="button" id="openModal" class="c-button -touroku">新規登録</button>
-        <button type="button" id="clear" class="c-button -sakuzyo">全ての予定を削除</button>
       </div>
     </section>
     <!-- モーダルエリアここから -->
     <section id="modalArea" class="modalArea">
       <div id="modalBg" class="modalBg"></div>
       <div class="modalWrapper">
-        <div class="modalContents">
+        <div class="modalConte nts">
           <div class="l-input__wrapper">
             <div class="l-input__area">
               <div class="selectdiv">
@@ -189,7 +189,6 @@
         </div>
       </div>
     </section>
-    <!-- チャット機能 -->
     <section class="l-section">
       <form>
         <fieldset>
@@ -246,7 +245,7 @@
       } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
       const firebaseConfig = {
-        apiKey: "",
+        apiKey: "AIzaSyC1f3ffICzNQg8wqd09cCzZEI9LywsQaiM",
         authDomain: "chat-product-b0292.firebaseapp.com",
         projectId: "chat-product-b0292",
         storageBucket: "chat-product-b0292.appspot.com",
@@ -363,74 +362,74 @@
         documents.forEach(function (document) {
           if (document.data.name === "papa") {
             htmlElements.push(`
-                        <div class=l-chatWrapper>
-                          <div class=l-chatImg> <img src="img/papa.png"></div>
-                          <div id="${document.id}" class="l-chatTxt">
-                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
-                            <p>${document.data.text}</p>
-                          </div>
-                        </div>
-                      `);
+                              <div class=l-chatWrapper>
+                                <div class=l-chatImg> <img src="img/papa.png"></div>
+                                <div id="${document.id}" class="l-chatTxt">
+                                  <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                                  <p>${document.data.text}</p>
+                                </div>
+                              </div>
+                            `);
           } else if (document.data.name === "mama") {
             htmlElements.push(`
-                        <div class=l-chatWrapper>
-                          <div class=l-chatImg> <img src="img/mama.png"></div>
-                          <div id="${document.id}" class="l-chatTxt">
-                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
-                            <p>${document.data.text}</p>
-                          </div>
-                        </div>
-                      `);
+                              <div class=l-chatWrapper>
+                                <div class=l-chatImg> <img src="img/mama.png"></div>
+                                <div id="${document.id}" class="l-chatTxt">
+                                  <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                                  <p>${document.data.text}</p>
+                                </div>
+                              </div>
+                            `);
           } else if (document.data.name === "nanami") {
             htmlElements.push(`
-                        <div class=l-chatWrapper>
-                          <div class=l-chatImg> <img src="img/nanami.png"></div>
-                          <div id="${document.id}" class="l-chatTxt">
-                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
-                            <p>${document.data.text}</p>
-                          </div>
-                        </div>
-                      `);
+                              <div class=l-chatWrapper>
+                                <div class=l-chatImg> <img src="img/nanami.png"></div>
+                                <div id="${document.id}" class="l-chatTxt">
+                                  <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                                  <p>${document.data.text}</p>
+                                </div>
+                              </div>
+                            `);
           } else if (document.data.name === "shiho") {
             htmlElements.push(`
-                        <div class=l-chatWrapper>
-                          <div class=l-chatImg> <img src="img/shiho.png"></div>
-                          <div id="${document.id}" class="l-chatTxt">
-                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
-                            <p>${document.data.text}</p>
-                          </div>
-                        </div>
-                      `);
+                              <div class=l-chatWrapper>
+                                <div class=l-chatImg> <img src="img/shiho.png"></div>
+                                <div id="${document.id}" class="l-chatTxt">
+                                  <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                                  <p>${document.data.text}</p>
+                                </div>
+                              </div>
+                            `);
           } else if (document.data.name === "kaho") {
             htmlElements.push(`
-                        <div class=l-chatWrapper>
-                          <div class=l-chatImg> <img src="img/kaho.png"></div>
-                          <div id="${document.id}" class="l-chatTxt">
-                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
-                            <p>${document.data.text}</p>
-                          </div>
-                        </div>
-                      `);
+                              <div class=l-chatWrapper>
+                                <div class=l-chatImg> <img src="img/kaho.png"></div>
+                                <div id="${document.id}" class="l-chatTxt">
+                                  <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                                  <p>${document.data.text}</p>
+                                </div>
+                              </div>
+                            `);
           } else if (document.data.name === "yuno") {
             htmlElements.push(`
-                        <div class=l-chatWrapper>
-                          <div class=l-chatImg> <img src="img/yuno.png"></div>
-                          <div id="${document.id}" class="l-chatTxt">
-                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
-                            <p>${document.data.text}</p>
-                          </div>
-                        </div>
-                      `);
+                              <div class=l-chatWrapper>
+                                <div class=l-chatImg> <img src="img/yuno.png"></div>
+                                <div id="${document.id}" class="l-chatTxt">
+                                  <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                                  <p>${document.data.text}</p>
+                                </div>
+                              </div>
+                            `);
           } else if (document.data.name === "ayu") {
             htmlElements.push(`
-                        <div class=l-chatWrapper>
-                          <div class=l-chatImg> <img src="img/ayu.png"></div>
-                          <div id="${document.id}" class="l-chatTxt">
-                            <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
-                            <p>${document.data.text}</p>
-                          </div>
-                        </div>
-                      `);
+                              <div class=l-chatWrapper>
+                                <div class=l-chatImg> <img src="img/ayu.png"></div>
+                                <div id="${document.id}" class="l-chatTxt">
+                                  <p class=p-chatTime>${convertTimestampToDatetime(document.data.time)}</p>
+                                  <p>${document.data.text}</p>
+                                </div>
+                              </div>
+                            `);
           }
         });
         $("#output").html(htmlElements);
@@ -563,6 +562,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "papa") {
             const k = document.getElementById("papa-hyouzi-secondday");
             const kk = document.createElement("ul");
@@ -577,6 +580,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "papa") {
             const k = document.getElementById("papa-hyouzi-thirdday");
             const kk = document.createElement("ul");
@@ -591,6 +598,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "papa") {
             const k = document.getElementById("papa-hyouzi-fourthdday");
             const kk = document.createElement("ul");
@@ -605,6 +616,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "papa") {
             const k = document.getElementById("papa-hyouzi-fifthdday");
             const kk = document.createElement("ul");
@@ -619,6 +634,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "papa") {
             const k = document.getElementById("papa-hyouzi-sixthdday");
             const kk = document.createElement("ul");
@@ -633,6 +652,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "papa") {
             const k = document.getElementById("papa-hyouzi-seventhdday");
             const kk = document.createElement("ul");
@@ -647,6 +670,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           }
           //MAMAゾーン
           if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "mama") {
@@ -662,6 +689,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "mama") {
             const k = document.getElementById("mama-hyouzi-secondday");
             const kk = document.createElement("ul");
@@ -675,6 +706,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "mama") {
             const k = document.getElementById("mama-hyouzi-thirdday");
             const kk = document.createElement("ul");
@@ -688,6 +723,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "mama") {
             const k = document.getElementById("mama-hyouzi-fourthdday");
             const kk = document.createElement("ul");
@@ -701,6 +740,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "mama") {
             const k = document.getElementById("mama-hyouzi-fifthdday");
             const kk = document.createElement("ul");
@@ -714,6 +757,14 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "mama") {
             const k = document.getElementById("mama-hyouzi-sixthdday");
             const kk = document.createElement("ul");
@@ -727,6 +778,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "mama") {
             const k = document.getElementById("mama-hyouzi-seventhdday");
             const kk = document.createElement("ul");
@@ -740,7 +795,12 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           }
+
           //NANAMIゾーン
           if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "nanami") {
             const k = document.getElementById("nanami-hyouzi-firstday");
@@ -755,6 +815,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "nanami") {
             const k = document.getElementById("nanami-hyouzi-secondday");
             const kk = document.createElement("ul");
@@ -768,6 +832,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "nanami") {
             const k = document.getElementById("nanami-hyouzi-thirdday");
             const kk = document.createElement("ul");
@@ -781,6 +849,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "nanami") {
             const k = document.getElementById("nanami-hyouzi-fourthdday");
             const kk = document.createElement("ul");
@@ -794,6 +866,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "nanami") {
             const k = document.getElementById("nanami-hyouzi-fifthdday");
             const kk = document.createElement("ul");
@@ -807,6 +883,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "nanami") {
             const k = document.getElementById("nanami-hyouzi-sixthdday");
             const kk = document.createElement("ul");
@@ -820,6 +900,14 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "nanami") {
             const k = document.getElementById("nanami-hyouzi-seventhdday");
             const kk = document.createElement("ul");
@@ -833,6 +921,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           }
           //SHIHOゾーン
           if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "shiho") {
@@ -848,6 +940,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "shiho") {
             const k = document.getElementById("shiho-hyouzi-secondday");
             const kk = document.createElement("ul");
@@ -861,6 +957,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "shiho") {
             const k = document.getElementById("shiho-hyouzi-thirdday");
             const kk = document.createElement("ul");
@@ -874,6 +974,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "shiho") {
             const k = document.getElementById("shiho-hyouzi-fourthdday");
             const kk = document.createElement("ul");
@@ -887,6 +991,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "shiho") {
             const k = document.getElementById("shiho-hyouzi-fifthdday");
             const kk = document.createElement("ul");
@@ -900,6 +1008,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "shiho") {
             const k = document.getElementById("shiho-hyouzi-sixthdday");
             const kk = document.createElement("ul");
@@ -913,6 +1025,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "shiho") {
             const k = document.getElementById("shiho-hyouzi-seventhdday");
             const kk = document.createElement("ul");
@@ -926,6 +1042,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           }
           //KAHOゾーン
           if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "kaho") {
@@ -941,6 +1061,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "kaho") {
             const k = document.getElementById("kaho-hyouzi-secondday");
             const kk = document.createElement("ul");
@@ -954,6 +1078,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "kaho") {
             const k = document.getElementById("kaho-hyouzi-thirdday");
             const kk = document.createElement("ul");
@@ -967,6 +1095,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "kaho") {
             const k = document.getElementById("kaho-hyouzi-fourthdday");
             const kk = document.createElement("ul");
@@ -980,6 +1112,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "kaho") {
             const k = document.getElementById("kaho-hyouzi-fifthdday");
             const kk = document.createElement("ul");
@@ -993,6 +1129,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "kaho") {
             const k = document.getElementById("kaho-hyouzi-sixthdday");
             const kk = document.createElement("ul");
@@ -1006,6 +1146,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "kaho") {
             const k = document.getElementById("kaho-hyouzi-seventhdday");
             const kk = document.createElement("ul");
@@ -1019,6 +1163,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           }
           //YUNOゾーン
           if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "yuno") {
@@ -1034,6 +1182,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "yuno") {
             const k = document.getElementById("yuno-hyouzi-secondday");
             const kk = document.createElement("ul");
@@ -1047,6 +1199,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "yuno") {
             const k = document.getElementById("yuno-hyouzi-thirdday");
             const kk = document.createElement("ul");
@@ -1060,6 +1216,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "yuno") {
             const k = document.getElementById("yuno-hyouzi-fourthdday");
             const kk = document.createElement("ul");
@@ -1073,6 +1233,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "yuno") {
             const k = document.getElementById("yuno-hyouzi-fifthdday");
             const kk = document.createElement("ul");
@@ -1086,6 +1250,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "yuno") {
             const k = document.getElementById("yuno-hyouzi-sixthdday");
             const kk = document.createElement("ul");
@@ -1099,6 +1267,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "yuno") {
             const k = document.getElementById("yuno-hyouzi-seventhdday");
             const kk = document.createElement("ul");
@@ -1112,6 +1284,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           }
           //AYUゾーン
           if (memo_document.memoData.bi === weekseven[0] && memo_document.memoData.who === "ayu") {
@@ -1127,6 +1303,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[1] && memo_document.memoData.who === "ayu") {
             const k = document.getElementById("ayu-hyouzi-secondday");
             const kk = document.createElement("ul");
@@ -1140,6 +1320,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[2] && memo_document.memoData.who === "ayu") {
             const k = document.getElementById("ayu-hyouzi-thirdday");
             const kk = document.createElement("ul");
@@ -1153,6 +1337,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[3] && memo_document.memoData.who === "ayu") {
             const k = document.getElementById("ayu-hyouzi-fourthdday");
             const kk = document.createElement("ul");
@@ -1166,6 +1354,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[4] && memo_document.memoData.who === "ayu") {
             const k = document.getElementById("ayu-hyouzi-fifthdday");
             const kk = document.createElement("ul");
@@ -1179,6 +1371,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[5] && memo_document.memoData.who === "ayu") {
             const k = document.getElementById("ayu-hyouzi-sixthdday");
             const kk = document.createElement("ul");
@@ -1192,6 +1388,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           } else if (memo_document.memoData.bi === weekseven[6] && memo_document.memoData.who === "ayu") {
             const k = document.getElementById("ayu-hyouzi-seventhdday");
             const kk = document.createElement("ul");
@@ -1205,6 +1405,10 @@
             k.appendChild(kk);
             kk.appendChild(pp);
             kk.appendChild(ppp);
+            kk.addEventListener("click", function () {
+              const docRef = doc(db, "memo", memo_document.id);
+              deleteDoc(docRef);
+            });
           }
         });
       });
